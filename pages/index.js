@@ -28,7 +28,17 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     toast("Generating your image...", { position: "top-center" });
-    const response = await fetch(`/api/image?prompt=${prompt}`);
+    const response = await fetch("https://openai-queue.vercel.app/api/images", {
+      headers: {
+        "x-api-route": "/api/callback",
+        Authorization: process.env.OPENAI_API_KEY,
+      },
+      body: JSON.stringify({
+        prompt,
+        n: 1,
+        size: "1024x1024",
+      }),
+    });
     const json = await response.json();
     setMessageId(json.id);
   }
