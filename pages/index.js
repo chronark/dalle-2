@@ -34,8 +34,8 @@ export default function Home() {
         Authorization: process.env.OPENAI_API_KEY,
       },
     });
-    console.log(response);
     const json = await response.json();
+    console.log(json);
     setMessageId(json.id);
   }
 
