@@ -28,13 +28,13 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     toast("Generating your image...", { position: "top-center" });
-    console.log(process.env.OPENAI_API_KEY);
     const response = await fetch(`/api/image?prompt=${prompt}`, {
       headers: {
         "x-api-route": "/api/callback",
         Authorization: process.env.OPENAI_API_KEY,
       },
     });
+    console.log(response);
     const json = await response.json();
     setMessageId(json.id);
   }
