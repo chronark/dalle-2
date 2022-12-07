@@ -29,6 +29,7 @@ export default function Home() {
     setLoading(true);
     toast("Generating your image...", { position: "top-center" });
     const response = await fetch("https://openai-queue.vercel.app/api/images", {
+      method: 'POST',
       headers: {
         "x-api-route": "/api/callback",
         Authorization: process.env.OPENAI_API_KEY,
