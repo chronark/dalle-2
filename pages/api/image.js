@@ -14,7 +14,8 @@ export default async function handler(req, res) {
         size: "1024x1024",
       }),
     });
-    return res.status(200).json(response);
+    const json = await response.json();
+    return res.status(202).json(json);
   } catch (error) {
     return res.status(500).json({
       message: `Error forwarding request to https://openai-queue.vercel.app/: ${error}`,
