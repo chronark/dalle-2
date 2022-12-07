@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const response = await fetch("https://openai-queue.vercel.app/api/images", {
       method: "POST",
       headers: {
-        "x-api-route": "/api/callback",
+        "x-api-route": "https://dalle-2.vercel.app/api/callback",
         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       body: JSON.stringify({

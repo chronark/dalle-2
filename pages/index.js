@@ -28,12 +28,7 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     toast("Generating your image...", { position: "top-center" });
-    const response = await fetch(`/api/image?prompt=${prompt}`, {
-      headers: {
-        "x-api-route": "https://dalle-2.vercel.app/api/callback",
-        Authorization: process.env.OPENAI_API_KEY,
-      },
-    });
+    const response = await fetch(`/api/image?prompt=${prompt}`);
     const json = await response.json();
     console.log({ json });
     setMessageId(json.id);
