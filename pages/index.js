@@ -29,7 +29,7 @@ export default function Home() {
     setLoading(true);
     toast("Generating your image...", { position: "top-center" });
     const response = await fetch(`/api/image?prompt=${prompt}`);
-    console.log(response.status);
+    console.log(response);
     const json = await response.json();
     console.log(json)
     setMessageId(json.id);
