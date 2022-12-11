@@ -12,17 +12,17 @@ export default function Home() {
   const [image, setImage] = useState(null);
   const [canShowImage, setCanShowImage] = useState(false);
 
-  useInterval(
-    // async () => {
-    //   const res = await fetch(`/api/poll?id=${messageId}`);
-    //   const json = await res.json();
-    //   if (res.status === 200) {
-    //     setLoading(false);
-    //     setImage(json.data[0].url);
-    //   }
-    // },
-    // loading ? 1000 : null
-  );
+  // useInterval(
+  //   async () => {
+  //     const res = await fetch(`/api/poll?id=${messageId}`);
+  //     const json = await res.json();
+  //     if (res.status === 200) {
+  //       setLoading(false);
+  //       setImage(json.data[0].url);
+  //     }
+  //   },
+  //   loading ? 1000 : null
+  // );
 
   async function submitForm(e) {
     e.preventDefault();
