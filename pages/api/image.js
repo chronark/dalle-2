@@ -1,3 +1,5 @@
+import { Redis } from "@upstash/redis";
+
 const DALL_E = "https://api.openai.com/v1/images/generations";
 
 export const config = {
