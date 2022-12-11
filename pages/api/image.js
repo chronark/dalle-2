@@ -4,6 +4,8 @@ export const config = {
   type: 'experimental-background'
 }
 
+const redis = Redis.fromEnv();
+
 export default async function handler(req, res) {
   const { prompt } = req.query;
   try {
@@ -24,7 +26,7 @@ export default async function handler(req, res) {
 
     const json = await response.json();
 
-    console.log({ json });
+    console.log(json.data);
   
     // await fetch("http:localhost:3000/api/callback", { 
     //   method: 'POST',
